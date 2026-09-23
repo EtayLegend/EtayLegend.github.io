@@ -19,7 +19,8 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: "src",
+      input: ".",
+      output: "_site"
     },
 
     pathPrefix: "/your-repository-name/" 
