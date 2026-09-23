@@ -2,4 +2,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6"
   }
+},
+{
+  "scripts": {
+    "build": "eleventy build",
+    "dev": "eleventy build --serve --incremental"
+  }
 }
