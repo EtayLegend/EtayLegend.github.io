@@ -2,97 +2,95 @@
 layout: layout.html
 ---
 
-<main>
+
+*This site is currently under active development. Be sure to check back from time to time for any updates!!)*
+
+<heading-anchors>
+    <h1 id="about">About</h1>
+    Hello, I am Ethan Windsor and am currently a 4th year student at Brock University & Niagara College GAME program.
+        I spend most of my time exploring new programming challeges, always looking for something new. My current interest include procedural generation and graphics programming. Throughout my years, I have been part of many projects. Down below are just a few of them.
     
-    *This site is currently under active development. Be sure to check back from time to time for any updates!!)*
 
-    <heading-anchors>
-        <h1 id="about">About</h1>
-        Hello, I am Ethan Windsor and am currently a 4th year student at Brock University & Niagara College GAME program.
-            I spend most of my time exploring new programming challeges, always looking for something new. My current interest include procedural generation and graphics programming. Throughout my years, I have been part of many projects. Down below are just a few of them.
-        
+    <hr>
+    <iframe style="width: 1280px !important; height: 720px !important" 
+        src="https://www.youtube.com/embed/u8Rf7hjciOQ" 
+        frameborder="1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+    <hr>
 
-        <hr>
-        <iframe style="width: 1280px !important; height: 720px !important" 
-            src="https://www.youtube.com/embed/u8Rf7hjciOQ" 
-            frameborder="1" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-        <hr>
+    <h1 id="current-projects">Current Projects</h1>
+    <div class="grid">
+        {% for current in collections.projectCurrent %}
+        <div class="grid-item">
+            <h3 id="current.id"></h3>
+            <a class="ha" href="#name" style="position-anchor: --ha_0_1;">
+                <span class="ha-visualhide"></span>
+            </a>
+            <h2>{{ current.data.title}}</h2>
 
-        <h1 id="current-projects">Current Projects</h1>
-        <div class="grid">
-            {% for current in collections.projectCurrent %}
-            <div class="grid-item">
-                <h3 id="current.id"></h3>
-                <a class="ha" href="#name" style="position-anchor: --ha_0_1;">
-                    <span class="ha-visualhide"></span>
-                </a>
-                <h2>{{ current.data.title}}</h2>
-
-                <p class="small-text"> {{current.data.description}} </p>
-                <picture></picture>
-                <p></p>
-                <p>{{current.content}}</p>
-            </div>
-            {% endfor %}
+            <p class="small-text"> {{current.data.description}} </p>
+            <picture></picture>
+            <p></p>
+            <p>{{current.content}}</p>
         </div>
+        {% endfor %}
+    </div>
 
-        <h1 id="latest-posts">Latest Posts</h1> 
-        <ol class="postlist" style="--postlist-index: {{ collections.posts.length}}">
-            {% for latest in collections.posts limit: 1%}
-                <li class="postlist-item">
-                    <a class="postlist-link" href="{{ latest.url }}"> {{ latest.data.title }}</a>
-                    <p class="postlist-description">{{ latest.data.description }}</p>
-                </li>
-            {% endfor %}
-        </ol>
+    <h1 id="latest-posts">Latest Posts</h1> 
+    <ol class="postlist" style="--postlist-index: {{ collections.posts.length}}">
+        {% for latest in collections.posts limit: 1%}
+            <li class="postlist-item">
+                <a class="postlist-link" href="{{ latest.url }}"> {{ latest.data.title }}</a>
+                <p class="postlist-description">{{ latest.data.description }}</p>
+            </li>
+        {% endfor %}
+    </ol>
 
-        <h1 id="past-projects">Past Projects</h1>
+    <h1 id="past-projects">Past Projects</h1>
 
-        <div class="grid">
-            {% for project in collections.projectsByFileName %}
-            <div class="grid-item">
-                <h3 id="project.id"></h3>
-                <a class="ha" href="#name" style="position-anchor: --ha_0_1;">
-                    <span class="ha-visualhide"></span>
-                </a>
-                
-                <h2>
-                {% if project.data.external_url %}
-                    <a href="{{project.data.external_url}}">{{ project.data.title}}</a>
+    <div class="grid">
+        {% for project in collections.projectsByFileName %}
+        <div class="grid-item">
+            <h3 id="project.id"></h3>
+            <a class="ha" href="#name" style="position-anchor: --ha_0_1;">
+                <span class="ha-visualhide"></span>
+            </a>
+            
+            <h2>
+            {% if project.data.external_url %}
+                <a href="{{project.data.external_url}}">{{ project.data.title}}</a>
 
-                {% else %}
-                    <a class="disabled-link">{{project.data.title}}</a>
-                
-                {% endif %}
-                </h2>
+            {% else %}
+                <a class="disabled-link">{{project.data.title}}</a>
+            
+            {% endif %}
+            </h2>
 
 
 
-                <p class="small-text"> {{project.data.description}} </p>
-                <picture>
-                    <img src="{{project.data.image}}" style="width:auto;">
-                </picture>
-                <p></p>
-                <p>{{project.content}}</p>
-            </div>
-            {% endfor %}
+            <p class="small-text"> {{project.data.description}} </p>
+            <picture>
+                <img src="{{project.data.image}}" style="width:auto;">
+            </picture>
+            <p></p>
+            <p>{{project.content}}</p>
         </div>
-        
-        <div class="Contact">
+        {% endfor %}
+    </div>
+    
+    <div class="Contact">
 
-            <h1 id="Contact">Contact</h1>
-            <strong>Email: </strong> <a href="mailto:ethan@ewgame.dev">ethan@ewgame.dev</a>
-            <br>
-            <strong>Linkedin: </strong> <a href="www.linkedin.com/in/ethan-windsor">ethan-windsor</a>
-            </br>
-            <strong>Itch.io: </strong> <a href="https://etay-legend.itch.io/">etay_legend.itch.io</a>
-            <br>
-            <strong>Github: </strong> <a href="https://github.com/EtayLegend">github.com/EtayLegend</a>
-            </br>
-        </div>
+        <h1 id="Contact">Contact</h1>
+        <strong>Email: </strong> <a href="mailto:ethan@ewgame.dev">ethan@ewgame.dev</a>
+        <br>
+        <strong>Linkedin: </strong> <a href="www.linkedin.com/in/ethan-windsor">ethan-windsor</a>
+        </br>
+        <strong>Itch.io: </strong> <a href="https://etay-legend.itch.io/">etay_legend.itch.io</a>
+        <br>
+        <strong>Github: </strong> <a href="https://github.com/EtayLegend">github.com/EtayLegend</a>
+        </br>
+    </div>
 
-    </heading-anchors>
-</main>
+</heading-anchors>

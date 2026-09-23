@@ -3,12 +3,8 @@ title:
 description:
 image:
 ---
-<main> 
-    <h1>
-    </h1>
-    {{description}}
 
-    <body>
-    </body>
+<h1></h1>
+{{description}}
 
-</main>
+<p></p>
