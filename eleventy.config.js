@@ -1,6 +1,8 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/images");
 
+  eleventyConfig.addPassthroughCopy("css");
+
   eleventyConfig.addCollection("projectsByFileName", function(collectionApi) {
     return collectionApi.getFilteredByTag("project").sort((a, b) => {
       return b.inputPath.localeCompare(a.inputPath, undefined, { numeric: true, sensitivity: 'base' });
