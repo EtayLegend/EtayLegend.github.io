@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
       output: "_site"
     },
 
-    pathPrefix: "/" 
+    pathPrefix: "/https://etaylegend.github.io/" 
   };
 
 };
