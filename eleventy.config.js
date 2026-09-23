@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
       output: "_site"
     },
 
-    pathPrefix: "/your-repository-name/" 
+    pathPrefix: "/" 
   };
 
 };
