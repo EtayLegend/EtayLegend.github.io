@@ -1,10 +1,14 @@
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("assets/images");
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
+export default function(eleventyConfig) {
+  
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  
+  eleventyConfig.addPassthroughCopy("assets/images");
   eleventyConfig.addPassthroughCopy("css");
 
   eleventyConfig.addCollection("projectsByFileName", function(collectionApi) {
-    return collectionApi.getFilteredByTag("project").sort((a, b) => {
+  return collectionApi.getFilteredByTag("project").sort((a, b) => {
       return b.inputPath.localeCompare(a.inputPath, undefined, { numeric: true, sensitivity: 'base' });
     });
   });
@@ -19,13 +23,16 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  const isLocalServer = eleventyConfig.mode === "serve"; 
+  const productionPrefix = "/your-repo-name/"; 
+
   return {
     dir: {
       input: ".",
       output: "_site"
     },
 
-    pathPrefix: "/https://etaylegend.github.io/" 
+    pathPrefix: isLocalServer ? "/" : productionPrefix
   };
 
 };
