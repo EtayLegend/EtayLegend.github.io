@@ -21,7 +21,9 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: ".",
       output: "_site"
-    }
+    },
+
+    pathPrefix: "/your-repository-name/" 
   };
 
 };
