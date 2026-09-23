@@ -23,7 +23,7 @@ export default function(eleventyConfig) {
     });
   });
 
-  const isLocalServer = eleventyConfig.mode === "serve"; 
+  const isLocal = process.env.IS_LOCAL == "true";
   const productionPrefix = "/your-repo-name/"; 
 
   return {
@@ -32,7 +32,7 @@ export default function(eleventyConfig) {
       output: "_site"
     },
 
-    pathPrefix: isLocalServer ? "/" : productionPrefix
+    pathPrefix: isLocal ? "/" : productionPrefix
   };
 
 };
