@@ -24,7 +24,7 @@ export default function(eleventyConfig) {
   });
 
   const isLocal = process.env.IS_LOCAL == "true";
-  const productionPrefix = "/your-repo-name/"; 
+  const productionPrefix = "/EtayLegend.github.io/"; 
 
   return {
     dir: {
