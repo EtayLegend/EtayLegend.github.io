@@ -5,12 +5,13 @@
   "description": "GAME program portfolio site built with Eleventy",
   "main": ".eleventy.js",
   "scripts": {
-    "start": "cross-env IS_LOCAL=true eleventy --serve",
+    "start": "npx cross-env IS_LOCAL=true eleventy --serve",
     "build": "eleventy"
   },
   "author": "Ethan Windsor",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.6",
+    "cross-env": "^10.1.0"
   }
 }
