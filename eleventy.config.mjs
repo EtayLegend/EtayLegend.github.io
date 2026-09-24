@@ -24,8 +24,8 @@ export default function(eleventyConfig) {
     });
   });
 
-  const isLocal = process.env.IS_LOCAL === "true";
-  const productionPrefix = "/EtayLegend.github.io/"; 
+  // const isLocal = process.env.IS_LOCAL === "true";
+  // const productionPrefix = "/EtayLegend.github.io/"; 
 
   return {
     dir: {
@@ -33,7 +33,8 @@ export default function(eleventyConfig) {
       output: "_site"
     },
 
-    pathPrefix: isLocal ? "/" : productionPrefix
+    // pathPrefix: isLocal ? "/" : productionPrefix
+    pathPrefix: "/"
   };
 
 };
