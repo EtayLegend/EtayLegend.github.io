@@ -30,7 +30,9 @@ jobs:
         run: npm ci || npm install
 
       - name: Build Eleventy Site
-        run: npx @11ty/eleventy
+        run: npm run build
+        env:
+          IS_LOCAL: "false"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
