@@ -4,6 +4,7 @@ export default function(eleventyConfig) {
   
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   
+  eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.addPassthroughCopy("assets/images");
   eleventyConfig.addPassthroughCopy("css");
 
